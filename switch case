@@ -1,0 +1,84 @@
+#include <stdio.h>
+int main()
+{
+    int num1, num2;
+    float result;
+    char ch; // to store operator choice
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+    printf("Choose operation to perform (+,-,*,/): ");
+    scanf(" %c", &ch);
+    result = 0;
+    switch (ch)
+    {
+    case '+':
+        result = num1 + num2;
+        break;
+    case '-':
+        result = num1 - num2;
+        break;
+    case '*':
+        result = num1 * num2;
+        break;
+    case '/':
+        result = (float)num1 / (float)num2;
+        break;
+    default:
+        printf("Invalid operation.\n");
+    }
+    printf("Result: %d %c %d = %f\n", num1, ch, num2, result);
+    return 0;
+}
+
+// calculator in c
+
+#include <stdio.h>  
+int main()  
+{  
+    // declare local variables  
+    char opt;     //opt variable define the operator symbols.
+    int n1, n2;   //where n1 and n2 take two numeric values
+    float res;    //res will store results
+    printf (" Select an operator (+, -, *, /) to perform an operation  \n ");  
+    scanf ("%c", &opt); // take an operator  
+    printf (" Enter the first number: ");  
+    scanf(" %d", &n1); // take fist number  
+    printf (" Enter the second number: ");  
+    scanf (" %d", &n2); // take second number  
+      
+    if (opt == '+')  
+    {  
+        res = n1 + n2; // add two numbers  
+        printf (" Addition of %d and %d is: %f", n1, n2, res);  
+    }  
+      
+    else if (opt == '-')  
+    {  
+        res = n1 - n2; // subtract two numbers  
+        printf (" Subtraction of %d and %d is: %f", n1, n2, res);  
+    }  
+      
+    else if (opt == '*')  
+    {  
+        res = n1 * n2; // multiply two numbers  
+        printf (" Multiplication of %d and %d is: %f", n1, n2, res);  
+    }  
+      
+    else if (opt == '/')  
+    {  
+        if (n2 == 0)   // if n2 == 0, take another number  
+        {  
+            printf (" \n Divisor cannot be zero. Please enter another value ");  
+            scanf ("%d", &n2);        
+        }  
+        res = n1 / n2; // divide two numbers  
+        printf (" Division of %d and %d is: %.2f", n1, n2, res);  
+    }  
+    else  
+    {  
+        printf(" \n You have entered wrong inputs ");  
+    }  
+    return 0;  
+} 
